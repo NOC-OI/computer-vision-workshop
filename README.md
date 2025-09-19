@@ -42,3 +42,46 @@ Change `DATASET_PATH` to  `/work/scratch-nopw2/colinsau/cv-workshop/SPC_manual_l
 
 In `mod6_fine_tuning.ipynb` change `TRAINING_PATH` and `VALIDATION_PATH` to "/work/scratch-nopw2/colinsau/cv-workshop/ZooScan/train"
 
+## Running as a batch job on JASMIN
+
+### Save the notebook as a Python file
+In Jupyter click File->Save and Export Notebook As->Executable Script. Save the resulting script to your computer and then upload it to JASMIN either using the Upload button in Jupyter or by copying with SCP. 
+
+### Create a batch job
+Login to a JASMIN [Sci server](https://help.jasmin.ac.uk/docs/interactive-computing/sci-servers/) and save the following as `mod6_fine_tuning.slurm`.
+```
+#!/bin/bash 
+#SBATCH --partition=orchid
+#SBATCH --account=orchid 
+#SBATCH --gres=gpu:1
+#SBATCH --qos=orchid
+#SBATCH --mem=8G
+#SBATCH --ntasks=4
+#SBATCH -o %J.out 
+#SBATCH -e %J.err 
+
+conda activate /work/scratch-nopw2/colinsau/computer-vision-workshop-env
+python mod6_fine_tuning.py
+```
+Ensure that any code setting the number of workers is set to no more than 4 (or the value of ntasks, 4 has been found to be an optimal number). 
+
+### Removing Jupyter Specific Code
+The live progress bars shown during training/evaluating are using a Jupyter specific library (`tqdm.notebook`), this still runs under Slurm but doesn't output much information. Change `from tqdm.notebook import tqdm, trange` to `from tqdm import tqdm, trange` if you would like more detailed progress output, similar to what you saw in the Jupyter notebook.
+
+Remove any lines which start with `get_ipython().run_line_magic`. The display of the confusion matrix will also not work and can be removed if you want. 
+
+### Launching a Batch Job
+From a JASMIN Sci server run:
+
+`sbatch mod6_fine_tuning.slurm`
+
+### Monitoring Batch Job Progress
+The job will create two files both named after your job number. The `sbatch` command will have told you the job number, you can also find this with the `squeue` command. 
+
+You can see a list of all jobs running on the Orchid GPU cluster with the command:
+`squeue -p orchid` 
+
+When running your job should have a "R" in the ST (state) column. 
+
+There should be two files created each time a job is launched named after the job number followed by either `.out` or `.err`, e.g. `41329938.out` and `41329938.err`. These contain all of the output and error messages from your job. The training progress goes into the error file. You can watch either file in real time as the job runs by using the command `tail -f <filename>`, for example `tail -f 41329938.err`. 
+
