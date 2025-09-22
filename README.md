@@ -13,13 +13,13 @@ The data sets have all been preloaded on the NOC Data Science Platform (DSP). Th
 This set of notebooks uses the compute enviroment described in `environment.yaml`. To [create the environment on the DSP](https://nocacuk.gitlab.io/ocean-informatics/data-science-platform/user-documentation/using-conda.html#), open a terminal from the Launcher and run: 
 
 ```
-$ conda env create -n <env name> -f new_enviroment.yml
+$ conda env create -n cv-workshop -f enviroment.yml
 ```
 
 to create a new named environment from the configuration file. To make the environment visible to your Jupyter notebooks run: 
 
 ```
-$ python -m ipykernel install --user --name <your environment name>
+$ python -m ipykernel install --user --name cv-workshop
 ```
 
 Within a few minutes, the environment should appear in your Jupyter launcher. 
