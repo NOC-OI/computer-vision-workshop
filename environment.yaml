@@ -283,12 +283,21 @@ dependencies:
   - zlib-ng=2.2.5=hde8ca8f_0
   - zstd=1.5.7=hb8e6e7a_2
   - pip:
+      - certifi==2025.8.3
+      - charset-normalizer==3.4.3
+      - clipboard==0.0.4
+      - dill==0.4.0
       - filelock==3.13.1
       - fsspec==2024.6.1
+      - humanfriendly==10.0
+      - idna==3.10
+      - iniconfig==2.1.0
       - ipywidgets==8.1.7
       - jinja2==3.1.4
+      - jsonpickle==4.1.1
       - jupyterlab-widgets==3.0.15
       - markupsafe==3.0.2
+      - megadetector-utils==10.0.9
       - mpmath==1.3.0
       - nvidia-cublas-cu12==12.6.4.1
       - nvidia-cuda-cupti-cu12==12.6.80
@@ -304,9 +313,20 @@ dependencies:
       - nvidia-nccl-cu12==2.26.2
       - nvidia-nvjitlink-cu12==12.6.85
       - nvidia-nvtx-cu12==12.6.77
+      - pluggy==1.6.0
+      - polars==1.33.1
+      - pyperclip==1.10.0
+      - pyqtree==1.0.0
+      - pytest==8.4.2
+      - pyyaml==6.0.2
+      - requests==2.32.5
+      - send2trash==1.8.3
       - sympy==1.13.3
       - torch==2.7.1
       - torchvision==0.22.1
       - triton==3.3.1
+      - ultralytics==8.3.202
+      - ultralytics-thop==2.0.17
+      - urllib3==2.5.0
       - widgetsnbextension==4.0.14
 prefix: /noc/users/ericor/.conda/envs/cv-workshop
