@@ -99,7 +99,7 @@ and [ZooScan](https://sites.google.com/view/piqv/), plus a terrestrial dataset
 """))
 
 cells.append(md("""\
-## Getting started on the DSP
+## Getting started on the Data Science Platform (DSP)
 
 1. Connect to the NOC VPN
 2. Open the DSP JupyterHub: [notebooks.noc.ac.uk/hub/spawn](https://notebooks.noc.ac.uk/hub/spawn)
@@ -139,7 +139,7 @@ Still in the `computer-vision-workshop` folder:
 cells.append(md("""\
 ## How this notebook works
 
-- Presentation sections (like this one) give context. Code + exercise sections are the hands-on
+- Presentation sections (like this one) give context. Code and exercise sections are the hands-on
   modules, unchanged from the standalone module notebooks.
 - Run code cells with **Shift+Enter**.
 - Code cells have a grey background; output appears directly below.
@@ -169,7 +169,7 @@ cells.append(md("""\
 **In scope for this workshop:**
 - Supervised classification
 - Feature selection
-- Ensemble / margin classifiers
+- Ensemble and margin classifiers
 - Convolutional neural networks
 
 **Out of scope:**
@@ -363,18 +363,18 @@ cells.append(md("""\
 ## Images are matrices of values
 
 - A digital image is a matrix of numbers
-- In an 8-bit gray scale image, each pixel's value (its "gray level") ranges from 0 (black) to
+- In an 8-bit grey scale image, each pixel's value (its "grey level") ranges from 0 (black) to
   255 (white)
-- Some sensors have greater bit depth and represent gray levels more precisely
+- Some sensors have greater bit depth and represent grey levels more precisely
 
 <img src="assets/slides/day1/gray_level_ramp.png" width="380" alt="Gray level ramp from 0 (black) to 255 (white)">
 """))
 
 cells.append(md("""\
-## Color images are 3D matrices
+## Colour images are 3D matrices
 
-- One 2D layer ("channel") per color
-- Each channel on its own is just a gray scale image
+- One 2D layer ("channel") per colour
+- Each channel on its own is just a grey scale image
 
 <img src="assets/slides/day1/channel_all_split_mod1_s23.png" width="620" alt="An RGB plankton image (928, 1736, 3) split into separate Red, Green, and Blue channels, each (928, 1736)">
 """))
@@ -416,7 +416,7 @@ cells.append(md("""\
 """))
 
 cells.append(md("""\
-The module below covers pixel indexing, gray scale conversion, and all of these transforms in
+The module below covers pixel indexing, grey scale conversion, and all of these transforms in
 code, which you'll need later for data augmentation.
 
 ---
@@ -459,7 +459,7 @@ one of the "clean-up" steps used after thresholding.
 """))
 
 cells.append(md("""\
-## Module 2 – When backgrounds get complicated
+## Module 2: When backgrounds get complicated
 
 Structured backgrounds (benthic habitat imagery is the classic example) break the simple
 threshold-and-clean pipeline.
@@ -555,7 +555,7 @@ Finally, machine learning! Using the metrics from Module 3, we'll train two type
 """))
 
 cells.append(md("""\
-## Module 4 – Building intuition: fruit fly or porcupine?
+## Module 4: Building intuition: fruit fly or porcupine?
 
 Imagine classifying images into porcupine, fruit fly, or fish:
 
