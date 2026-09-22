@@ -88,7 +88,7 @@ cells = []
 # TITLE
 # ====================================================================
 cells.append(md("""\
-# Computer Vision Workshop — Day 1
+# Computer Vision Workshop: Day 1
 
 ### Image processing → ensemble & margin classifiers
 
@@ -133,21 +133,21 @@ Still in the `computer-vision-workshop` folder:
 > ```
 
 - Takes a few minutes
-- The `cv-workshop` kernel then appears in your Jupyter Launcher — select it for this notebook
+- The `cv-workshop` kernel then appears in your Jupyter Launcher; select it for this notebook
 """))
 
 cells.append(md("""\
 ## How this notebook works
 
 - Presentation sections (like this one) give context. Code + exercise sections are the hands-on
-  modules — unchanged from the standalone module notebooks.
+  modules, unchanged from the standalone module notebooks.
 - Run code cells with **Shift+Enter**.
 - Code cells have a grey background; output appears directly below.
 - Some exercises give you pseudo-code scaffolding to fill in yourself.
 """))
 
 cells.append(md("""\
-## Today's plan — "classical" computer vision
+## Today's plan: "classical" computer vision
 
 1. Image manipulation
 2. Region finding (segmentation)
@@ -181,12 +181,12 @@ cells.append(md("""\
 cells.append(md("""\
 ## A few common computer vision tasks
 
-- **Classification** — assign a single label to an image ("what is this?")
-- **Object detection** — locate and label multiple objects within an image
-- **Segmentation** — classify an image down to the pixel level
+- **Classification**: assign a single label to an image ("what is this?")
+- **Object detection**: locate and label multiple objects within an image
+- **Segmentation**: classify an image down to the pixel level
 
 The same image can have many valid labels depending on the task: a photo of a giraffe could be
-*giraffe*, *animal*, *outdoors*, or *Southern giraffe* — depending on what the classifier was built
+*giraffe*, *animal*, *outdoors*, or *Southern giraffe*, depending on what the classifier was built
 to do.
 """))
 
@@ -195,7 +195,7 @@ cells.append(md("""\
 
 <img src="assets/slides/intro/classification_giraffe.jpg" width="420" alt="A giraffe looking directly at the camera">
 
-*Giraffe? Animal? Outdoors? Southern giraffe? All correct — it depends on the task.*
+*Giraffe? Animal? Outdoors? Southern giraffe? All correct; it depends on the task.*
 """))
 
 cells.append(md("""\
@@ -209,10 +209,10 @@ cells.append(md("""\
 cells.append(md("""\
 ## Where computer vision shows up in ocean science
 
-- **Acoustics** — classifying humpback whale vocalizations from spectrogram "images" (Google AI, 2018)
-- **Imaging** — counting and identifying marine organisms from towed-camera and UAV imagery
+- **Acoustics**: classifying humpback whale vocalizations from spectrogram "images" (Google AI, 2018)
+- **Imaging**: counting and identifying marine organisms from towed-camera and UAV imagery
   (Orenstein et al., 2025)
-- **Ecology** — species identification from field photos, e.g. BioCLIP (Stevens et al., 2024, CVPR)
+- **Ecology**: species identification from field photos, e.g. BioCLIP (Stevens et al., 2024, CVPR)
 """))
 
 cells.append(md("""\
@@ -220,7 +220,7 @@ cells.append(md("""\
 
 <img src="assets/slides/intro/acoustics_spectrogram.png" width="620" alt="Spectrograms of humpback whale calls with a detected call highlighted in yellow">
 
-*A spectrogram is just an image — the same CV tools apply (Google AI, 2018).*
+*A spectrogram is just an image; the same CV tools apply (Google AI, 2018).*
 """))
 
 cells.append(md("""\
@@ -228,7 +228,7 @@ cells.append(md("""\
 
 <img src="assets/slides/intro/ocean_imaging_orenstein2025.jpg" width="700" alt="Four underwater imaging examples: benthic organism segmentation, deep-sea object detection, fish detection near a wreck, and jellyfish segmentation">
 
-*Detection and segmentation across imaging platforms — benthic habitat, deep sea, wrecks, midwater
+*Detection and segmentation across imaging platforms: benthic habitat, deep sea, wrecks, midwater
 (Orenstein et al., 2025).*
 """))
 
@@ -259,7 +259,7 @@ cells.append(md("""\
 cells.append(md("""\
 ### Choosing an architecture and framework
 
-- Larger architectures take longer to train and run — budget can rule some out
+- Larger architectures take longer to train and run, so budget can rule some out
 - A good starting point: whatever a similar published problem used
 - Normal to try several architectures in parallel and compare
 - Framework choice is often constrained by:
@@ -271,19 +271,19 @@ cells.append(md("""\
 cells.append(md("""\
 ### What we'll focus on
 
-**Today — classical machine learning:** hand-engineered features feeding **ensemble or margin
+**Today, classical machine learning:** hand-engineered features feeding **ensemble or margin
 classifiers**.
 
 - **Training:** draw features from labeled images, fit a classifier
 - **Testing:** draw the same features from unseen images, check performance
 
-**Tomorrow — convolutional neural networks:** learn features directly from images instead.
+**Tomorrow, convolutional neural networks:** learn features directly from images instead.
 """))
 
 cells.append(md("""\
 ### A first look: convolutional neural networks
 
-- Learn features directly from labeled images — no hand-engineering
+- Learn features directly from labeled images, no hand-engineering
 - Simplest architectures are a series of filters
 - Filter shapes and weights are learned during training
 - Require input images to all be the same size
@@ -313,7 +313,7 @@ samples over three years:
 
 <img src="assets/slides/intro/distribution_shift_example.png" width="560" alt="Plot of prevalence over time for a plankton class, comparing a ResNet classifier to manual counts, with a red box highlighting a period where they diverge">
 
-- For most of the time series — including a bloom peak in mid-2016 — the model tracks the manual
+- For most of the time series, including a bloom peak in mid-2016, the model tracks the manual
   counts closely
 - In late 2017 (red boxes), the model starts consistently over-counting relative to the manual
   count
@@ -331,8 +331,8 @@ cells.append(md("""\
 
 Image processing is a subfield of signal processing that treats an image as a 2D signal:
 
-- **Manipulation** — resizing, warping, other transforms (Module 1)
-- **Filtering** — edge detection, region finding (Modules 2–3)
+- **Manipulation**: resizing, warping, other transforms (Module 1)
+- **Filtering**: edge detection, region finding (Modules 2–3)
 
 Many Photoshop-style features are built on exactly these ideas.
 """))
@@ -340,9 +340,9 @@ Many Photoshop-style features are built on exactly these ideas.
 cells.append(md("""\
 ## Further reading
 
-- *Digital Image Processing*, 4th ed. — Gonzalez & Woods (Pearson)
-- *Computer Vision: A Modern Approach*, 2nd ed. — Forsyth & Ponce (Pearson)
-- *Computer Vision: Algorithms and Applications* — Szeliski (Springer), free at
+- *Digital Image Processing*, 4th ed., Gonzalez & Woods (Pearson)
+- *Computer Vision: A Modern Approach*, 2nd ed., Forsyth & Ponce (Pearson)
+- *Computer Vision: Algorithms and Applications*, Szeliski (Springer), free at
   [szeliski.org/Book](http://szeliski.org/Book/)
 """))
 
@@ -355,7 +355,7 @@ cells.append(md("""\
 **Goals:**
 - Get comfortable manipulating images in Python
 - Learn a few common image transformations
-- Understand how transformations subtly change an image's appearance — this matters again later,
+- Understand how transformations subtly change an image's appearance, which matters again later,
   once we feed images into deep nets
 """))
 
@@ -417,7 +417,7 @@ cells.append(md("""\
 
 cells.append(md("""\
 The module below covers pixel indexing, gray scale conversion, and all of these transforms in
-code — you'll need them later for data augmentation.
+code, which you'll need later for data augmentation.
 
 ---
 """))
@@ -431,8 +431,8 @@ cells.append(md("""\
 
 Segmentation selects the objects of interest out of a full frame.
 
-- **Uniform background** (e.g. plankton microscopy) — comparatively easy
-- **Structured background** (e.g. benthic habitat) — far more complex, still an active research
+- **Uniform background** (e.g. plankton microscopy): comparatively easy
+- **Structured background** (e.g. benthic habitat): far more complex, still an active research
   problem
 """))
 
@@ -450,7 +450,7 @@ pixels underneath it.
 cells.append(md("""\
 ## Morphological clean-up
 
-A structuring element sweeps over the mask; any pixel it touches gets added to the foreground —
+A structuring element sweeps over the mask; any pixel it touches gets added to the foreground,
 one of the "clean-up" steps used after thresholding.
 
 <img src="assets/slides/day1/dilation_animation.gif" width="300" alt="Animation of morphological dilation: a cross-shaped structuring element sweeping over a grid, adding a pixel wherever it touches an existing foreground pixel">
@@ -461,7 +461,7 @@ one of the "clean-up" steps used after thresholding.
 cells.append(md("""\
 ## Module 2 – When backgrounds get complicated
 
-Structured backgrounds — benthic habitat imagery is the classic example — break the simple
+Structured backgrounds (benthic habitat imagery is the classic example) break the simple
 threshold-and-clean pipeline.
 
 <img src="assets/slides/day1/benthic_coral_example.png" width="420" alt="Underwater photo of a structured coral reef habitat, illustrating a complex segmentation background">
@@ -472,11 +472,11 @@ threshold-and-clean pipeline.
 cells.append(md("""\
 ## Strategies for complex backgrounds
 
-- **Point annotation** — randomly sample points, classify a small neighborhood around each to
+- **Point annotation**: randomly sample points, classify a small neighborhood around each to
   estimate coverage (e.g. [CoralNet](https://coralnet.ucsd.edu/); Steffens et al., 2019)
-- **Stereo image pairs** — fully automated segmentation (King et al., 2018), though even the best
+- **Stereo image pairs**: fully automated segmentation (King et al., 2018), though even the best
   method only got ~66% of pixels correct across all classes
-- **[deep-segments](https://github.com/andrewcking/deep-segments)** — King et al.'s tool using ML
+- **[deep-segments](https://github.com/andrewcking/deep-segments)**: King et al.'s tool using ML
   to speed up human ground-truthing
 """))
 
@@ -485,7 +485,7 @@ cells.append(md("""\
 
 <img src="assets/slides/day1/king_et_al_segmentation.png" width="700" alt="Comparison of ground truth coral segmentation against FCN8s, Dilation8, DilationMod, and DeepLab v2 automated methods">
 
-*Ground truth vs. four automated methods on the same benthic image (King et al., 2018) — even the
+*Ground truth vs. four automated methods on the same benthic image (King et al., 2018); even the
 best only partially agrees with ground truth.*
 
 ---
@@ -512,7 +512,7 @@ Shape information: major axis, minor axis, equivalent spherical diameter, solidi
 
 <img src="assets/slides/day1/morphology_axes.png" width="500" alt="A copepod with its major axis drawn as a line and equivalent spherical diameter drawn as a circle of the same area">
 
-*Major axis (line) and equivalent spherical diameter — a circle with the same area as the region
+*Major axis (line) and equivalent spherical diameter: a circle with the same area as the region
 (green).*
 """))
 
@@ -546,12 +546,12 @@ cells.extend(mod3)
 cells.append(md("""\
 # 📘 Module 4: Ensemble and margin classifiers
 
-Finally — machine learning! Using the metrics from Module 3, we'll train two types of classifiers:
+Finally, machine learning! Using the metrics from Module 3, we'll train two types of classifiers:
 
 - **Support Vector Machine** (a *margin* classifier)
 - **Random Forest** (an *ensemble* classifier)
 
-*(Further reading: Pattern Classification, 3rd ed. — Duda, Hart & Stork, Wiley-Interscience.)*
+*(Further reading: Pattern Classification, 3rd ed., Duda, Hart & Stork, Wiley-Interscience.)*
 """))
 
 cells.append(md("""\
@@ -578,7 +578,7 @@ cells.append(md("""\
 
 <img src="assets/slides/day1/histogram_3class.png" width="420" alt="Histogram of porcupine, fruit fly, and fish images by eye-to-body-size ratio, showing three overlapping peaks that a single threshold cannot separate">
 
-One feature — and even one dividing line — is no longer enough.
+One feature, and even one dividing line, is no longer enough.
 """))
 
 cells.append(md("""\
@@ -589,7 +589,7 @@ a point in 2D space:
 
 <img src="assets/slides/day1/feature_space_scatter.png" width="480" alt="Scatter plot of porcupine, fruit fly, and fish images plotted by shape versus eye-to-body size ratio, forming three separable clusters">
 
-Now we can draw lines — or in higher dimensions, hyperplanes — that separate the classes. That's
+Now we can draw lines (or in higher dimensions, hyperplanes) that separate the classes. That's
 exactly what both classifiers below do, using every feature Module 3 extracted, not just two.
 """))
 
