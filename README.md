@@ -25,10 +25,10 @@ After about one minute a new cv-workshop icon will appear on your launcher and i
 
 Only do this if you aren't using the Data Science Platform or if the above fails. It will take a few minutes and use several gigabytes of storage (DSP users only get a 20GB quota by default). 
 
-This set of notebooks uses the compute enviroment described in `environment.yaml`. To [create the environment on the DSP](https://nocacuk.gitlab.io/ocean-informatics/data-science-platform/user-documentation/using-conda.html#), open a terminal from the Launcher and run: 
+This set of notebooks uses the compute environment described in `environment.yaml`. To [create the environment on the DSP](https://nocacuk.gitlab.io/ocean-informatics/data-science-platform/user-documentation/using-conda.html#), open a terminal from the Launcher and run: 
 
 ```
-$ conda env create -n cv-workshop -f enviroment.yml
+$ conda env create -n cv-workshop -f environment.yml
 ```
 
 This creates a new named environment from the configuration file. 
