@@ -28,7 +28,7 @@ Only do this if you aren't using the Data Science Platform or if the above fails
 This set of notebooks uses the compute environment described in `environment.yaml`. To [create the environment on the DSP](https://nocacuk.gitlab.io/ocean-informatics/data-science-platform/user-documentation/using-conda.html#), open a terminal from the Launcher and run: 
 
 ```
-$ conda env create -n cv-workshop -f environment.yml
+$ conda env create -n cv-workshop -f environment.yaml
 ```
 
 This creates a new named environment from the configuration file. 
