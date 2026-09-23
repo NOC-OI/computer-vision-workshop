@@ -12,6 +12,19 @@ Participants will learn basic concepts in computer vision, from manipulating ind
 The data sets have all been preloaded on the NOC Data Science Platform (DSP). There are some hard coded file paths that assume you are running the examples on the DSP. 
 
 ### Environment set up
+
+#### Using the pre-existing environment on the Data Science Platform
+
+```
+$ conda run -p /groups/cv-workshop/cv-workshop-env python -m ipykernel install --user --name cv-workshop
+```
+
+After about one minute a new cv-workshop icon will appear on your launcher and in the list of available kernels. 
+
+#### Install the environment yourself
+
+Only do this if you aren't using the Data Science Platform or if the above fails. It will take a few minutes and use several gigabytes of storage (DSP users only get a 20GB quota by default). 
+
 This set of notebooks uses the compute enviroment described in `environment.yaml`. To [create the environment on the DSP](https://nocacuk.gitlab.io/ocean-informatics/data-science-platform/user-documentation/using-conda.html#), open a terminal from the Launcher and run: 
 
 ```
